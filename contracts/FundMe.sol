@@ -18,6 +18,14 @@ contract FundMe {
     constructor() {
         i_owner = msg.sender;
     }
+    
+    fallback() external payable {
+        fund();
+    }
+    
+    receive() external payable {
+        fund();
+    }
 
     modifier only_owner() {
         if (i_owner != msg.sender) {
