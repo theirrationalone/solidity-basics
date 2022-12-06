@@ -47,7 +47,7 @@ contract FundMe {
         // // use all gas or set gas and returns a boolean and data returned by the function (if that function returns any data or value) if called by call method
         (bool isSuccess,) = payable(msg.sender).call{ value: address(this).balance }("");
 
-        // can be altered with revert
+        // can be altered with revert.
         require(isSuccess, "Withdrawal failed!");
     }
 }
